@@ -17,6 +17,8 @@ module distance_core (
     // more than one such module will be instantiated to make use of parallel computation
     // all of the work will be done on the square of the distances instead of sq root as sq root module is expensive of hardware
 
+    // NO NEED TO USE SIGNED DATA TYPE AS DISTANCES ARE SQUARED
+
     // this is just calculation in 3d D2 = (PR-CR)2 + (PG-CG)2 + (PB-CB)2
     // temp wires
     wire[17:0] Sr;
