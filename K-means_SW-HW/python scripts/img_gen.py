@@ -18,4 +18,4 @@ for y in range(height):
         pixels[x, y] = (r, g, b)
 
 img.save("../data/test.jpg")
-print(f"Generated an amazing {width}x{width} test pattern as 'test.jpg'!")
+print(f"Generated an{width}x{width} test pattern as 'test.jpg'!")
