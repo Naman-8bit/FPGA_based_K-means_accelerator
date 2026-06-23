@@ -4,8 +4,8 @@ BOARD = tangnano9k
 FAMILY = GW1N-9C
 DEVICE = GW1NR-LV9QN88PC6/I5
 
-# 1. Define your files
-RTL_SRC = 
+# 1. Define your files (Added the missing distance_unit and comparator cores)
+RTL_SRC = rtl/inference.v rtl/uart_rx.v rtl/uart_tx.v rtl/distance_unit.v rtl/comparator.v
 CST = constraints/tangnano9k.cst
 
 # Output files
@@ -20,9 +20,9 @@ all: build_dir $(FS)
 build_dir:
 	mkdir -p build
 
-# Stage 1: Synthesis
+# Stage 1: Synthesis (Changed -top flag to 'inference' to match your code)
 $(JSON): $(RTL_SRC)
-	yosys -p "read_verilog $(RTL_SRC); synth_gowin -top blinky -json $(JSON)"
+	yosys -p "read_verilog $(RTL_SRC); synth_gowin -top inference -json $(JSON)"
 
 # Stage 2: Place and Route (UPDATED FOR HIMBAECHEL)
 $(PNR): $(JSON) $(CST)

@@ -32,3 +32,6 @@ Because the line is asynchronous, the receiver has to know exactly when a new by
 * The Start Bit: The transmitter pulls the wire LOW (0) for one full bit-duration. This is the "wake up" signal.
 * The Data Bits: The 8 bits of your byte are sent, usually Least Significant Bit (LSB) first.
 * The Stop Bit: The transmitter pulls the wire HIGH (1) for at least one full bit-duration to signal the end of the byte.
+
+
+debugging majorly in fpga due to uninitialised state and stuff
