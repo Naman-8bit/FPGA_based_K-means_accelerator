@@ -53,7 +53,7 @@ module inference (
     Compute = 3,
     Transmit = 4;
 
-    reg[2:0] tx_state;
+    reg[2:0] tx_state = Wait_R;
 
     always @(posedge clk) begin
         tx_start<=0;
@@ -77,16 +77,20 @@ module inference (
                 end
             end
             Compute : begin
+                // one cycle delay needed: B register updates at end of Wait_B clock edge
+                // winning_cluster is combinational off registered R,G,B — valid here, not in Wait_B
                 tx_byte<={6'd0,winning_cluster};
                 tx_state<=Transmit;
             end
             Transmit : begin
                 if (!tx_busy) begin
-                    tx_start <= 1'b1;  
+                    tx_start <= 1'b1; 
+                    // now asserting both at the same time could have cause race around condition but since the uart is really slow 
+                    // compared to the core it wont be a problem here (fix is done in the bram module) 
                     tx_state<= Wait_R; 
                 end
             end
-            default : tx_state = 2'b00;
+            default : tx_state <= Wait_R;
         endcase
     end
 
