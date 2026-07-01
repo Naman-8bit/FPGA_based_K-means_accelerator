@@ -1,5 +1,3 @@
-
-Readme · MD
 # FPGA-Based K-Means Clustering Accelerator
  
 > A hardware accelerator for the inference phase of K-means clustering, implemented for real-time RGB image segmentation on FPGA.
