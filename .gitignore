@@ -1,0 +1,24 @@
+# -----------------------------
+# FPGA & Hardware Build Artifacts
+# -----------------------------
+build/
+*.fs
+*.vcd
+*.json
+*.log
+
+# -----------------------------
+# Python Artifacts
+# -----------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# -----------------------------
+# OS Generated Files
+# -----------------------------
+.DS_Store
+Thumbs.db
+ehthumbs.db
