@@ -1,12 +1,11 @@
 # FPGA-Based K-Means Clustering Accelerator
 
 ## Overview
-This repository contains a hardware accelerator for K-means clustering on FPGAs. It offloads the mathematically heavy inference phase from software to physical silicon. By computing the Euclidean distance to multiple centroids simultaneously, it bypasses standard CPU sequential bottlenecks. Currently configured for real-time RGB image segmentation.
-
+This repository is an effort to implement the inference phase of the K-means clustering algorithm in hardware, exploring and exploiting the parallelism of the algorithm to accelerate computation beyond the sequential execution model of traditional CPUs. The current implementation is configured for real-time RGB image segmentation on FPGAs.
 ---
 
 ## Core Hardware Architecture
-To achieve parallelism, the hardware computes all centroid distances concurrently. 
+To achieve parallelism, the hardware computes all centroid distances concurrently. Currently for demo set 3 centroids with R,G and B.
 
 ```mermaid
 graph TD
