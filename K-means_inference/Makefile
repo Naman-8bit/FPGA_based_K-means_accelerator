@@ -22,14 +22,23 @@ ifeq ($(TARGET), inference)
               rtl/functional_blocks/distance_unit.v \
               rtl/functional_blocks/comparator.v
 else ifeq ($(TARGET), inference_bram)
-    TOP = inference_bram
-    RTL_SRC = rtl/inference_bram_test.v \
+    TOP = inference_bram_v2
+    RTL_SRC = rtl/inference_bram_v2.v \
               rtl/functional_blocks/uart_rx.v \
               rtl/functional_blocks/uart_tx.v \
               rtl/functional_blocks/distance_unit.v \
               rtl/functional_blocks/comparator.v \
               rtl/functional_blocks/bram8bit.v \
               rtl/functional_blocks/bram24bit.v
+# else ifeq ($(TARGET), inference_bram_v2)
+#     TOP = inference_bram_v2
+#     RTL_SRC = rtl/inference_bram_v2.v \
+#               rtl/functional_blocks/uart_rx.v \
+#               rtl/functional_blocks/uart_tx.v \
+#               rtl/functional_blocks/distance_unit.v \
+#               rtl/functional_blocks/comparator.v \
+#               rtl/functional_blocks/bram8bit_v2.v \
+#               rtl/functional_blocks/bram24bit_v2.v
 endif
 
 # 3. Dynamic Output Files (Prevents overwriting the other build)

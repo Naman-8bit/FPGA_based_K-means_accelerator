@@ -13,6 +13,8 @@
 // bram needed one full clock cycle to transmit data which i didnt took in consideration giving me stupid outputs
 // bram_wait now needs two clock cycles to work
 // added a seperate state Write_inc to isolate write_addr and let the mux do its job properly
+
+// not working use the V2 VERSION ----------------------------------------------------------------
 module inference_bram #(
     parameter DEPTH      = 8192,
     parameter ADDR_WIDTH = $clog2(DEPTH)
