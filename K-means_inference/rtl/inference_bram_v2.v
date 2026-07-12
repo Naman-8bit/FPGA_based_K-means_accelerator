@@ -48,10 +48,7 @@ module inference_bram_v2 #(
         .clk(clk), .tx_start(tx_start), .tx_byte(tx_byte),
         .tx_busy(tx_busy), .tx_pin(tx_pin)
     );
-
-    // =====================================================================
     // FSM STATE ENCODING
-    // =====================================================================
     localparam [3:0]
         IDLE         = 4'd0,
         REC_LEN_H    = 4'd1,
