@@ -8,7 +8,7 @@
 - Two working communication architectures, measured and compared head-to-head: a **5.18x** speedup from redesigning the host↔FPGA protocol alone, with zero changes to the compute core
 - The optimized pipeline now runs within **0.4% of the theoretical UART bandwidth ceiling** — the system is bottlenecked purely by the physical serial link, not by software, OS scheduling, or FPGA compute
 
-📄 **Full engineering report** (methodology, complete resource tables, debugging notes) — coming soon in `REPORT.md`.
+📄 **Full engineering report** (methodology, complete resource tables, debugging notes) — tbd in `REPORT.md`.
 
 ---
 
