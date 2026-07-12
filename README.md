@@ -169,15 +169,10 @@ python3 python_scripts/host.py
 
 ## Roadmap
 
-**Completed**
 - [x] Finalize the BRAM inference pipeline
 - [x] Resolve the USB-to-UART buffer overflow
 - [x] Measure and confirm the pipeline is bandwidth-bound (within 0.4% of the theoretical UART ceiling)
-
-**Next: breaking past the UART ceiling**
 - [ ] Bypass UART via SD card (SPI), high-speed USB (FT232H), or PCIe/Gigabit Ethernet on a larger FPGA
-
-**Next: on-chip training (not just inference)**
 - [ ] Accumulate per-cluster RGB sums in BRAM (data accumulation for centroid updates)
 - [ ] Implement resource-efficient hardware division for centroid averaging without blowing the LUT budget
 - [ ] Upgrade the FSM to iterate autonomously over the dataset until centroids converge — a self-contained ML training accelerator, entirely on-chip
